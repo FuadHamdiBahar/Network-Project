@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="MPLS L3VPN Static Routing" id="cc978d35-fd85-4d44-bef9-82d5def9e974" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="444" top="204">
+        <slot id="1" module="PA-8E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="1"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="6"/>
+        <interface id="19" name="e1/3" type="ethernet" network_id="7"/>
+      </node>
+      <node id="2" name="R2" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="627" top="204">
+        <slot id="1" module="PA-8E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="1"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="R3" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="798" top="204">
+        <slot id="1" module="PA-8E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="3"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="4" name="R4" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="1008" top="207">
+        <slot id="1" module="PA-8E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="3"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="4"/>
+        <interface id="19" name="e1/3" type="ethernet" network_id="5"/>
+      </node>
+      <node id="5" name="R5" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="273" top="87">
+        <slot id="1" module="PA-8E"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="6"/>
+        <interface id="23" name="e1/7" type="ethernet" network_id="8"/>
+      </node>
+      <node id="6" name="R6" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="270" top="306">
+        <slot id="1" module="PA-8E"/>
+        <interface id="19" name="e1/3" type="ethernet" network_id="7"/>
+        <interface id="23" name="e1/7" type="ethernet" network_id="10"/>
+      </node>
+      <node id="7" name="R7" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="1122" top="81">
+        <slot id="1" module="PA-8E"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="4"/>
+        <interface id="23" name="e1/7" type="ethernet" network_id="9"/>
+      </node>
+      <node id="8" name="R8" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="1107" top="297">
+        <slot id="1" module="PA-8E"/>
+        <interface id="19" name="e1/3" type="ethernet" network_id="5"/>
+        <interface id="22" name="e1/6" type="ethernet" network_id="12"/>
+        <interface id="23" name="e1/7" type="ethernet" network_id="11"/>
+      </node>
+      <node id="9" name="VPC9" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="78" top="93">
+        <interface id="0" name="eth0" type="ethernet" network_id="8"/>
+      </node>
+      <node id="10" name="VPC10" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="81" top="315">
+        <interface id="0" name="eth0" type="ethernet" network_id="10"/>
+      </node>
+      <node id="11" name="VPC11" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="1272" top="90">
+        <interface id="0" name="eth0" type="ethernet" network_id="9"/>
+      </node>
+      <node id="12" name="VPC12" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="1269" top="306">
+        <interface id="0" name="eth0" type="ethernet" network_id="11"/>
+      </node>
+      <node id="13" name="VPC13" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="1191" top="477">
+        <interface id="0" name="eth0" type="ethernet" network_id="12"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-R1iface_16" left="330" top="202" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-R2iface_17" left="512" top="204" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-R3iface_16" left="684" top="202" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-R4iface_18" left="888" top="205" visibility="0" icon="lan.png"/>
+      <network id="5" type="bridge" name="Net-R4iface_19" left="894" top="205" visibility="0" icon="lan.png"/>
+      <network id="6" type="bridge" name="Net-R5iface_18" left="192" top="103" visibility="0" icon="lan.png"/>
+      <network id="7" type="bridge" name="Net-R6iface_19" left="216" top="283" visibility="0" icon="lan.png"/>
+      <network id="8" type="bridge" name="Net-VPC9iface_0" left="138" top="124" visibility="0" icon="lan.png"/>
+      <network id="9" type="bridge" name="Net-R7iface_23" left="1182" top="121" visibility="0" icon="lan.png"/>
+      <network id="10" type="bridge" name="Net-R6iface_23" left="330" top="346" visibility="0" icon="lan.png"/>
+      <network id="11" type="bridge" name="Net-R8iface_23" left="1158" top="340" visibility="0" icon="lan.png"/>
+      <network id="12" type="bridge" name="Net-R8iface_22" left="1158" top="340" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="txt 1" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDEiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSB1aS1yZXNpemFibGUganRrLWRyYWdnYWJsZSBkcmFnc3RvcHBlZCB1aS1yZXNpemFibGUtYXV0b2hpZGUgdWktc2VsZWN0ZWUgdWktc2VsZWN0ZWQganRrLWRyYWctc2VsZWN0ZWQgZnJlZS1zZWxlY3RlZCIgZGF0YS1wYXRoPSIxIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDY3MnB4OyB0b3A6IDEzOHB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogNTVweDsgd2lkdGg6IDE0MHB4OyI+PHAgYWxpZ249ImNlbnRlciIgc3R5bGU9InZlcnRpY2FsLWFsaWduOnRvcDtjb2xvcjojMDAwMDAwO2JhY2tncm91bmQtY29sb3I6I2ZmZmZmZjtmb250LXNpemU6MTJweDtmb250LXdlaWdodDogbm9ybWFsOyI+SUdQOiBPU1BGPGJyPlJ4ICZsdDsmZ3Q7IFJ5IDogMTAueC55LngvMjQ8YnI+TG9vcDAgOiAxOTIuMTY4LjI1NC54LzMyICAgICAgICA8L3A+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBub25lOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBub25lOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBub25lOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="2" name="txt 2" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDIiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIyIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDEzNXB4OyB0b3A6IDIxNnB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IHdpZHRoOiAxODcuMzMzcHg7IGhlaWdodDogNDguMjVweDsiPjxwIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjogdG9wOyBjb2xvcjogcmdiKDAsIDAsIDApOyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7IGZvbnQtc2l6ZTogMjQuMTI1cHg7IGZvbnQtd2VpZ2h0OiBub3JtYWw7Ij4xOTIuMTY4LjEueC8yNCAgICAgICAgPC9wPjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLWUiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXMiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXNlIHVpLWljb24gdWktaWNvbi1ncmlwc21hbGwtZGlhZ29uYWwtc2UiIHN0eWxlPSJ6LWluZGV4OiA5MDsiPjwvZGl2PjwvZGl2Pg==</data>
+      </textobject>
+      <textobject id="3" name="txt 3" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDMiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIGRyYWdzdG9wcGVkIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSIzIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDExMTlweDsgdG9wOiAyMDdweDsgY3Vyc29yOiBtb3ZlOyB6LWluZGV4OiAxMDAxOyB3aWR0aDogYXV0bzsgaGVpZ2h0OiA0OC4yNXB4OyI+PHAgYWxpZ249ImNlbnRlciIgc3R5bGU9InZlcnRpY2FsLWFsaWduOiB0b3A7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgZm9udC1zaXplOiAyNC4xMjVweDsgZm9udC13ZWlnaHQ6IG5vcm1hbDsiIGNvbnRlbnRlZGl0YWJsZT0iZmFsc2UiIGNsYXNzPSIiPjE5Mi4xNjguMi54LzI0ICAgICAgICA8L3A+PC9kaXY+</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>

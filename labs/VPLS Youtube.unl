@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="VPLS Youtube" id="eabec02d-6693-488e-b072-cfe69850415b" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="CSR1" type="qemu" template="csr1000vng" image="csr1000vng-universalk9.16.12.05-serial" console="telnet" cpu="1" cpulimit="0" ram="4096" ethernet="5" uuid="c70b8201-c025-4380-a473-8943623c2b07" qemu_options="-machine type=pc,accel=kvm -cpu host -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc" qemu_version="4.1.0" qemu_arch="x86_64" qemu_nic="vmxnet3" delay="0" icon="Router-2D-Cat-Blue-S.svg" config="0" left="276" top="99">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+        <interface id="1" name="Gi2" type="ethernet" network_id="4"/>
+        <interface id="2" name="Gi3" type="ethernet" network_id="5"/>
+        <interface id="3" name="Gi4" type="ethernet" network_id="3"/>
+      </node>
+      <node id="2" name="CSR2" type="qemu" template="csr1000vng" image="csr1000vng-universalk9.16.12.05-serial" console="telnet" cpu="1" cpulimit="0" ram="4096" ethernet="5" uuid="cb4b3efe-5b71-4618-a6a2-eec05d559476" qemu_options="-machine type=pc,accel=kvm -cpu host -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc" qemu_version="4.1.0" qemu_arch="x86_64" qemu_nic="vmxnet3" delay="0" icon="Router-2D-Cat-Blue-S.svg" config="0" left="597" top="99">
+        <interface id="0" name="Gi1" type="ethernet" network_id="1"/>
+        <interface id="1" name="Gi2" type="ethernet" network_id="6"/>
+        <interface id="2" name="Gi3" type="ethernet" network_id="7"/>
+        <interface id="4" name="Gi5" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="CSR3" type="qemu" template="csr1000vng" image="csr1000vng-universalk9.16.12.05-serial" console="telnet" cpu="1" cpulimit="0" ram="4096" ethernet="5" uuid="2c8c62bb-7a4b-40ab-a1b6-b1fabaa61235" qemu_options="-machine type=pc,accel=kvm -cpu host -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc" qemu_version="4.1.0" qemu_arch="x86_64" qemu_nic="vmxnet3" delay="0" icon="Router-2D-Cat-Blue-S.svg" config="0" left="444" top="315">
+        <interface id="1" name="Gi2" type="ethernet" network_id="8"/>
+        <interface id="3" name="Gi4" type="ethernet" network_id="3"/>
+        <interface id="4" name="Gi5" type="ethernet" network_id="2"/>
+      </node>
+      <node id="4" name="C1E1" type="qemu" template="vios" image="vios-adventerprisek9-m.SPA.159-3.M2" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="792c2793-35c9-45d2-b79d-d64625bb0f18" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="108" top="24">
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="4"/>
+      </node>
+      <node id="5" name="C2E1" type="qemu" template="vios" image="vios-adventerprisek9-m.SPA.159-3.M2" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="2dc00c9f-d2f6-4cd1-8323-e34bcf5422d6" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="126" top="210">
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="5"/>
+      </node>
+      <node id="6" name="C1E2" type="qemu" template="vios" image="vios-adventerprisek9-m.SPA.159-3.M2" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="323b51ca-48cb-4337-87e1-e80cd7c6c5c3" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="849" top="36">
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="6"/>
+      </node>
+      <node id="7" name="C2E2" type="qemu" template="vios" image="vios-adventerprisek9-m.SPA.159-3.M2" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="6699b5bf-19a8-44a2-ba6d-f6d9924d3d64" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="876" top="186">
+        <interface id="3" name="Gi0/3" type="ethernet" network_id="7"/>
+      </node>
+      <node id="8" name="C1E3" type="qemu" template="vios" image="vios-adventerprisek9-m.SPA.159-3.M2" console="telnet" cpu="1" cpulimit="0" ram="1024" ethernet="4" uuid="72f5dbaa-70df-43cd-882d-aa2ba507dcd0" qemu_options="-machine type=pc,accel=kvm -serial mon:stdio -nographic -no-user-config -nodefaults -rtc base=utc -cpu host" qemu_version="2.4.0" qemu_arch="x86_64" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="639" top="516">
+        <interface id="2" name="Gi0/2" type="ethernet" network_id="8"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-CSR1iface_0" left="342" top="124" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-CSR2iface_4" left="582" top="139" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-CSR1iface_3" left="342" top="124" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-C1E1iface_2" left="201" top="76" visibility="0" icon="lan.png"/>
+      <network id="5" type="bridge" name="Net-C2E1iface_3" left="216" top="223" visibility="0" icon="lan.png"/>
+      <network id="6" type="bridge" name="Net-C1E2iface_2" left="909" top="76" visibility="0" icon="lan.png"/>
+      <network id="7" type="bridge" name="Net-C2E2iface_3" left="936" top="226" visibility="0" icon="lan.png"/>
+      <network id="8" type="bridge" name="Net-C1E3iface_2" left="696" top="496" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="txt 1" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDEiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIxIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDQwOHB4OyB0b3A6IDkwcHg7IGN1cnNvcjogbW92ZTsgei1pbmRleDogMTAwMTsgaGVpZ2h0OiAzMi41MzM0cHg7IHdpZHRoOiAxMDguNzY3cHg7Ij48cCBhbGlnbj0iY2VudGVyIiBzdHlsZT0idmVydGljYWwtYWxpZ246IHRvcDsgY29sb3I6IHJnYigwLCAwLCAwKTsgYmFja2dyb3VuZC1jb2xvcjogcmdiKDI1NSwgMjU1LCAyNTUpOyBmb250LXNpemU6IDE1LjE1cHg7IGZvbnQtd2VpZ2h0OiBub3JtYWw7Ij4xNzIuMTYuMS4wLzMwICAgICAgICA8L3A+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBibG9jazsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXMiIHN0eWxlPSJ6LWluZGV4OiA5MDsgZGlzcGxheTogYmxvY2s7Ij48L2Rpdj48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1zZSB1aS1pY29uIHVpLWljb24tZ3JpcHNtYWxsLWRpYWdvbmFsLXNlIiBzdHlsZT0iei1pbmRleDogOTA7IGRpc3BsYXk6IGJsb2NrOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="3" name="txt 3" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDMiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIzIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDU2NHB4OyB0b3A6IDI2NHB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMzJweDsgd2lkdGg6IDExNHB4OyI+PHAgYWxpZ249ImNlbnRlciIgc3R5bGU9InZlcnRpY2FsLWFsaWduOiB0b3A7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgZm9udC1zaXplOiAxNnB4OyBmb250LXdlaWdodDogbm9ybWFsOyIgY29udGVudGVkaXRhYmxlPSJmYWxzZSIgY2xhc3M9IiI+MTcyLjE2LjEuOC8zMCAgICAgICAgPC9wPjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLWUiIHN0eWxlPSJ6LWluZGV4OiA5MDsgZGlzcGxheTogYmxvY2s7Ij48L2Rpdj48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1zIiBzdHlsZT0iei1pbmRleDogOTA7IGRpc3BsYXk6IGJsb2NrOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBibG9jazsiPjwvZGl2PjwvZGl2Pg==</data>
+      </textobject>
+      <textobject id="4" name="txt 4" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDQiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSI0IiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDI4MnB4OyB0b3A6IDI3OXB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMzFweDsgd2lkdGg6IDEwMi43NjdweDsiPjxwIGFsaWduPSJjZW50ZXIiIHN0eWxlPSJ2ZXJ0aWNhbC1hbGlnbjogdG9wOyBjb2xvcjogcmdiKDAsIDAsIDApOyBiYWNrZ3JvdW5kLWNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7IGZvbnQtc2l6ZTogMTUuNXB4OyBmb250LXdlaWdodDogbm9ybWFsOyIgY29udGVudGVkaXRhYmxlPSJmYWxzZSIgY2xhc3M9IiI+MTcyLjE2LjEuNC8zMCAgICAgICAgPC9wPjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLWUiIHN0eWxlPSJ6LWluZGV4OiA5MDsgZGlzcGxheTogYmxvY2s7Ij48L2Rpdj48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1zIiBzdHlsZT0iei1pbmRleDogOTA7IGRpc3BsYXk6IGJsb2NrOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBibG9jazsiPjwvZGl2PjwvZGl2Pg==</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>
