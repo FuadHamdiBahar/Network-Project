@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="Route Reflector - telecomTech" id="2d37b275-f69f-4f2b-9980-b2662e45e7fc" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="513" top="222">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="3"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="2" name="R2" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="438" top="381">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="6"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="5"/>
+      </node>
+      <node id="3" name="R3" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="573" top="519">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="6"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="4"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="8"/>
+        <interface id="19" name="e1/3" type="ethernet" network_id="11"/>
+      </node>
+      <node id="4" name="R4" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="258" top="234">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="1"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="5"/>
+        <interface id="19" name="e1/3" type="ethernet" network_id="7"/>
+      </node>
+      <node id="5" name="R5" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="237" top="390">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="9"/>
+        <interface id="19" name="e1/3" type="ethernet" network_id="7"/>
+      </node>
+      <node id="6" name="R6" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="303" top="528">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="9"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="10"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="8"/>
+      </node>
+      <node id="7" name="RR" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="630" top="372">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="3"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="4"/>
+      </node>
+      <node id="9" name="VPC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="189" top="75">
+        <interface id="0" name="eth0" type="ethernet" network_id="1"/>
+      </node>
+      <node id="10" name="VPC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="723" top="678">
+        <interface id="0" name="eth0" type="ethernet" network_id="11"/>
+      </node>
+      <node id="8" name="VPC" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="159" top="675">
+        <interface id="0" name="eth0" type="ethernet" network_id="10"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="2" type="bridge" name="Net-R4iface_17" left="333" top="244" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-R1iface_16" left="573" top="262" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-R7iface_17" left="660" top="421" visibility="0" icon="lan.png"/>
+      <network id="5" type="bridge" name="Net-R4iface_18" left="318" top="277" visibility="0" icon="lan.png"/>
+      <network id="6" type="bridge" name="Net-R2iface_16" left="495" top="421" visibility="0" icon="lan.png"/>
+      <network id="7" type="bridge" name="Net-R4iface_19" left="318" top="277" visibility="0" icon="lan.png"/>
+      <network id="8" type="bridge" name="Net-R3iface_18" left="633" top="562" visibility="0" icon="lan.png"/>
+      <network id="9" type="bridge" name="Net-R5iface_16" left="297" top="430" visibility="0" icon="lan.png"/>
+      <network id="11" type="bridge" name="Net-R3iface_19" left="633" top="562" visibility="0" icon="lan.png"/>
+      <network id="1" type="bridge" name="Net-VPCiface_0" left="297" top="133" visibility="0" icon="lan.png"/>
+      <network id="10" type="bridge" name="Net-VPCiface_0" left="219" top="715" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="txt 1" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDEiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIxIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDk5M3B4OyB0b3A6IDMwcHg7IGN1cnNvcjogbW92ZTsgei1pbmRleDogMTAwMTsgaGVpZ2h0OiAzNzMuNDczcHg7IHdpZHRoOiBhdXRvOyI+PHAgYWxpZ249ImNlbnRlciIgc3R5bGU9InZlcnRpY2FsLWFsaWduOiB0b3A7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgZm9udC1zaXplOiAxOC4yMTgycHg7IGZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBjbGFzcz0iIj5BUyAxMDA8YnI+T1NQRjxicj5Mb29wPGJyPjEwLjEueC4xLzMyPGJyPjxicj5SUiBDTElFTlQ8YnI+PGJyPlIxLCBSMiwgUjMgZGFuIFI0PGJyPjxicj5jbGllbnQgLSZndDsgUlIsIG90aGVyIGNsaWVudHMgYW5kIG5vbiBjbGllbnQ8YnI+PGJyPlJSIC0mZ3Q7IFJSLCBjbGllbnQgYW5kIG5vbiBjbGllbnQ8YnI+PGJyPm5vbiBjbGllbnQgLSZndDsgUlIsIGNsaWVudCBidXQgbm9uIGNsaWVudDwvcD48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1lIiBzdHlsZT0iei1pbmRleDogOTA7IGRpc3BsYXk6IGJsb2NrOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBibG9jazsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXNlIHVpLWljb24gdWktaWNvbi1ncmlwc21hbGwtZGlhZ29uYWwtc2UiIHN0eWxlPSJ6LWluZGV4OiA5MDsgZGlzcGxheTogYmxvY2s7Ij48L2Rpdj48L2Rpdj4=</data>
+      </textobject>
+      <textobject id="2" name="txt 2" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDIiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSB1aS1yZXNpemFibGUganRrLWRyYWdnYWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIyIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDI5N3B4OyB0b3A6IDE0NHB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7Ij48cCBhbGlnbj0iY2VudGVyIiBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7Ij4xOTIuMTY4LjEuMC8yNDxicj4gICAgICAgIDwvcD48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1lIiBzdHlsZT0iei1pbmRleDogOTA7Ij48L2Rpdj48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1zIiBzdHlsZT0iei1pbmRleDogOTA7Ij48L2Rpdj48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1zZSB1aS1pY29uIHVpLWljb24tZ3JpcHNtYWxsLWRpYWdvbmFsLXNlIiBzdHlsZT0iei1pbmRleDogOTA7Ij48L2Rpdj48L2Rpdj4=</data>
+      </textobject>
+      <textobject id="3" name="txt 3" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDMiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIGRyYWdzdG9wcGVkIHVpLXJlc2l6YWJsZSIgZGF0YS1wYXRoPSIzIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDY4NHB4OyB0b3A6IDYzMHB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMzBweDsgd2lkdGg6IGF1dG87Ij48cCBhbGlnbj0iY2VudGVyIiBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBjbGFzcz0iIj4xOTIuMTY4LjIuMC8yNDxicj4gICAgICAgIDwvcD48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1lIiBzdHlsZT0iei1pbmRleDogOTA7IGRpc3BsYXk6IGJsb2NrOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBibG9jazsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXNlIHVpLWljb24gdWktaWNvbi1ncmlwc21hbGwtZGlhZ29uYWwtc2UiIHN0eWxlPSJ6LWluZGV4OiA5MDsgZGlzcGxheTogYmxvY2s7Ij48L2Rpdj48L2Rpdj4=</data>
+      </textobject>
+      <textobject id="4" name="txt 4" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDQiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXNlbGVjdGVlIGRyYWdzdG9wcGVkIHVpLXJlc2l6YWJsZSIgZGF0YS1wYXRoPSI0IiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDI4OHB4OyB0b3A6IDY3MnB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogMzBweDsgd2lkdGg6IGF1dG87Ij48cCBhbGlnbj0iY2VudGVyIiBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7IiBjb250ZW50ZWRpdGFibGU9ImZhbHNlIiBjbGFzcz0iIj4xOTIuMTY4LjMuMC8yNDxicj4gICAgICAgIDwvcD48ZGl2IGNsYXNzPSJ1aS1yZXNpemFibGUtaGFuZGxlIHVpLXJlc2l6YWJsZS1lIiBzdHlsZT0iei1pbmRleDogOTA7IGRpc3BsYXk6IGJsb2NrOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyBkaXNwbGF5OiBibG9jazsiPjwvZGl2PjxkaXYgY2xhc3M9InVpLXJlc2l6YWJsZS1oYW5kbGUgdWktcmVzaXphYmxlLXNlIHVpLWljb24gdWktaWNvbi1ncmlwc21hbGwtZGlhZ29uYWwtc2UiIHN0eWxlPSJ6LWluZGV4OiA5MDsgZGlzcGxheTogYmxvY2s7Ij48L2Rpdj48L2Rpdj4=</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>
