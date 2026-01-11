@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="MPLS L3VPN sub interface between PE and CE" id="604afca7-fb36-4507-971b-fc01ae542e57" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="678" top="27">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="1"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="5"/>
+      </node>
+      <node id="2" name="R2" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="774" top="189">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="1"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="R3" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="906" top="24">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="3"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="7" name="R7" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="369" top="33">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="8"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="12"/>
+      </node>
+      <node id="8" name="R8" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="384" top="195">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="13"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="9"/>
+      </node>
+      <node id="9" name="R9" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="1296" top="33">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="6"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="11"/>
+      </node>
+      <node id="10" name="R10" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="1305" top="201">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="10"/>
+        <interface id="18" name="e1/2" type="ethernet" network_id="4"/>
+      </node>
+      <node id="5" name="PC5" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="198" top="45">
+        <interface id="0" name="eth0" type="ethernet" network_id="12"/>
+      </node>
+      <node id="12" name="PC12" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="198" top="207">
+        <interface id="0" name="eth0" type="ethernet" network_id="13"/>
+      </node>
+      <node id="13" name="PC13" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="1461" top="42">
+        <interface id="0" name="eth0" type="ethernet" network_id="11"/>
+      </node>
+      <node id="14" name="PC14" type="vpcs" template="vpcs" image="" ethernet="1" delay="0" icon="PC-2D-Desktop-Generic-S.svg" config="0" left="1467" top="213">
+        <interface id="0" name="eth0" type="ethernet" network_id="10"/>
+      </node>
+      <node id="15" name="R4" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="1011" top="189">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="3"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="7"/>
+      </node>
+      <node id="4" name="S4" type="iol" template="iol" image="i86bi-linux-l2-ipbasek9-15.1g.bin" ethernet="1" nvram="1024" ram="1024" serial="0" console="" delay="0" icon="Switch-2D-L2-Generic-S.svg" config="0" left="531" top="96">
+        <interface id="0" name="e0/0" type="ethernet" network_id="5"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="8"/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="9"/>
+      </node>
+      <node id="6" name="S6" type="iol" template="iol" image="i86bi-linux-l2-ipbasek9-15.1g.bin" ethernet="1" nvram="1024" ram="1024" serial="0" console="" delay="0" icon="Switch-2D-L2-Generic-S.svg" config="0" left="1152" top="132">
+        <interface id="0" name="e0/0" type="ethernet" network_id="7"/>
+        <interface id="16" name="e0/1" type="ethernet" network_id="6"/>
+        <interface id="32" name="e0/2" type="ethernet" network_id="4"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-R1iface_16" left="693" top="149" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-R2iface_17" left="825" top="149" visibility="0" icon="lan.png"/>
+      <network id="10" type="bridge" name="Net-PC14iface_0" left="1425" top="262" visibility="0" icon="lan.png"/>
+      <network id="11" type="bridge" name="Net-PC13iface_0" left="1455" top="88" visibility="0" icon="lan.png"/>
+      <network id="12" type="bridge" name="Net-PC5iface_0" left="264" top="94" visibility="0" icon="lan.png"/>
+      <network id="13" type="bridge" name="Net-PC12iface_0" left="279" top="247" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-R4iface_16" left="987" top="316" visibility="0" icon="lan.png"/>
+      <network id="5" type="bridge" name="Net-R1iface_17" left="738" top="73" visibility="0" icon="lan.png"/>
+      <network id="8" type="bridge" name="Net-R4iface_16" left="591" top="145" visibility="0" icon="lan.png"/>
+      <network id="9" type="bridge" name="Net-R4iface_32" left="591" top="145" visibility="0" icon="lan.png"/>
+      <network id="6" type="bridge" name="Net-R6iface_16" left="1227" top="139" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-R6iface_32" left="1218" top="136" visibility="0" icon="lan.png"/>
+      <network id="7" type="bridge" name="Net-R6iface_0" left="1218" top="136" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+  <objects>
+    <textobjects>
+      <textobject id="1" name="txt 1" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDEiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSB1aS1yZXNpemFibGUganRrLWRyYWdnYWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIxIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDg2NHB4OyB0b3A6IDE2MnB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7Ij48cCBhbGlnbj0iY2VudGVyIiBzdHlsZT0idmVydGljYWwtYWxpZ246dG9wO2NvbG9yOiMwMDAwMDA7YmFja2dyb3VuZC1jb2xvcjojZmZmZmZmO2ZvbnQtc2l6ZToxMnB4O2ZvbnQtd2VpZ2h0OiBub3JtYWw7Ij5PU1BGPGJyPmJncCA2NTAwMDxicj5zdWIgaW50ZXJmYWNlPGJyPmxvb3AwIDE3Mi4xNi54LngvMzI8YnI+aXAgaXNwIDEwLngueS54IG9yIHggLzI0ICAgICAgICA8L3A+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="2" name="txt 2" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDIiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIHVpLXJlc2l6YWJsZSBkcmFnc3RvcHBlZCIgZGF0YS1wYXRoPSIyIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDIwN3B4OyB0b3A6IDEzMnB4OyBjdXJzb3I6IG1vdmU7IHotaW5kZXg6IDEwMDE7IGhlaWdodDogNjUuMTVweDsgd2lkdGg6IDIxN3B4OyI+PHAgYWxpZ249ImNlbnRlciIgc3R5bGU9InZlcnRpY2FsLWFsaWduOiB0b3A7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgZm9udC1zaXplOiAzMC41NzVweDsgZm9udC13ZWlnaHQ6IG5vcm1hbDsiPjE5Mi4xNjguMS4wLzI0ICAgICAgICA8L3A+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtcyIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PGRpdiBjbGFzcz0idWktcmVzaXphYmxlLWhhbmRsZSB1aS1yZXNpemFibGUtc2UgdWktaWNvbiB1aS1pY29uLWdyaXBzbWFsbC1kaWFnb25hbC1zZSIgc3R5bGU9InotaW5kZXg6IDkwOyI+PC9kaXY+PC9kaXY+</data>
+      </textobject>
+      <textobject id="3" name="txt 3" type="text">
+        <data>PGRpdiBpZD0iY3VzdG9tVGV4dDMiIGNsYXNzPSJjdXN0b21TaGFwZSBjdXN0b21UZXh0IGNvbnRleHQtbWVudSBqdGstZHJhZ2dhYmxlIGRyYWdzdG9wcGVkIHVpLXJlc2l6YWJsZS1hdXRvaGlkZSIgZGF0YS1wYXRoPSIzIiBzdHlsZT0iZGlzcGxheTogaW5saW5lOyBwb3NpdGlvbjogYWJzb2x1dGU7IGxlZnQ6IDEzMTFweDsgdG9wOiAxMjNweDsgY3Vyc29yOiBtb3ZlOyB6LWluZGV4OiAxMDAxOyBoZWlnaHQ6IDYxLjE1cHg7IHdpZHRoOiBhdXRvOyI+PHAgYWxpZ249ImNlbnRlciIgc3R5bGU9InZlcnRpY2FsLWFsaWduOiB0b3A7IGNvbG9yOiByZ2IoMCwgMCwgMCk7IGJhY2tncm91bmQtY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTsgZm9udC1zaXplOiAzMC41NzVweDsgZm9udC13ZWlnaHQ6IG5vcm1hbDsiIGNvbnRlbnRlZGl0YWJsZT0iZmFsc2UiIGNsYXNzPSIiPjE5Mi4xNjguMi4wLzI0ICAgICAgICA8L3A+PC9kaXY+</data>
+      </textobject>
+    </textobjects>
+  </objects>
+</lab>
