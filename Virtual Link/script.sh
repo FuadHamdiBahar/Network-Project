@@ -65,6 +65,9 @@ network 10.1.2.2 0.0.0.0 area 1
 network 10.2.3.2 0.0.0.0 area 1
 network 10.2.2.2 0.0.0.0 area 1
 
+end
+wr
+
 # R3
 ena
 conf t 
@@ -73,11 +76,11 @@ int loop0
 ip addr 10.3.3.3 255.255.255.255
 no shut
 
-int gi0/1
+int e1/1
 no shut
 ip addr 10.2.3.3 255.255.255.0
 
-int gi0/0
+int e1/0
 no shut
 ip addr 10.3.5.3 255.255.255.0
 
@@ -87,6 +90,9 @@ network 10.2.3.3 0.0.0.0 area 1
 network 10.3.3.3 0.0.0.0 area 1
 network 10.3.5.3 0.0.0.0 area 2
 
+end
+wr
+
 # R5
 ena
 conf t 
@@ -95,7 +101,7 @@ int loop0
 ip addr 10.5.5.5 255.255.255.255
 no shut
 
-int gi0/0
+int e1/0
 no shut
 ip addr 10.3.5.5 255.255.255.0
 
