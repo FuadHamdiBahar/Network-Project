@@ -253,3 +253,16 @@ address-family ipv4 vrf A2
     redistribute static
 address-family ipv4 vrf B2
     redistribute static
+
+
+router# show bgp vpnv4 unicast all summary
+router# show bgp vpnv4 unicast all
+router# show bgp vpnv4 unicast vrf A1
+router# show bgp vpnv4 unicast rd RD
+
+router# show ip route vrf VRF_NAME
+router# show ip vrf [interface][detail]
+
+router# show mpls ldp [neighbors][binding]
+router# show mpls forwarding-table
+router# show ip cef NET MASK
