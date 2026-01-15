@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<lab name="Virtual Link" id="bfeff54f-bb63-4642-8f28-54355e8b8891" version="1" scripttimeout="300" lock="0">
+  <topology>
+    <nodes>
+      <node id="1" name="R1" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="483" top="318">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="1"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="3"/>
+      </node>
+      <node id="2" name="R2" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="675" top="321">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="1"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="3" name="R3" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="870" top="318">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="4"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="2"/>
+      </node>
+      <node id="4" name="R4" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="486" top="123">
+        <slot id="1" module="PA-4E"/>
+        <interface id="17" name="e1/1" type="ethernet" network_id="3"/>
+      </node>
+      <node id="5" name="R5" type="dynamips" template="c7200" image="c7200-adventerprisek9-mz.124-24.T5.image" idlepc="0x62f21000" nvram="128" ram="256" console="" delay="0" icon="Router-2D-Gen-White-S.svg" config="0" left="867" top="126">
+        <slot id="1" module="PA-4E"/>
+        <interface id="16" name="e1/0" type="ethernet" network_id="4"/>
+      </node>
+    </nodes>
+    <networks>
+      <network id="1" type="bridge" name="Net-R1iface_16" left="543" top="358" visibility="0" icon="lan.png"/>
+      <network id="2" type="bridge" name="Net-R2iface_17" left="726" top="355" visibility="0" icon="lan.png"/>
+      <network id="3" type="bridge" name="Net-R1iface_17" left="543" top="358" visibility="0" icon="lan.png"/>
+      <network id="4" type="bridge" name="Net-R3iface_16" left="915" top="358" visibility="0" icon="lan.png"/>
+    </networks>
+  </topology>
+</lab>
