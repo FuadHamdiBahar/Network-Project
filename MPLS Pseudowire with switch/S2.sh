@@ -1,0 +1,79 @@
+Switch#show running-config 
+Building configuration...
+
+Current configuration : 920 bytes
+!
+! Last configuration change at 18:10:44 UTC Mon Feb 16 2026
+!
+version 15.1
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname Switch
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+ip cef
+!
+!
+no ipv6 cef
+ipv6 multicast rpf use-bgp
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ switchport trunk encapsulation dot1q
+ switchport trunk allowed vlan 500
+ switchport mode trunk
+ duplex auto
+!
+interface Ethernet0/1
+ switchport access vlan 500
+ switchport mode access
+ duplex auto
+!
+interface Ethernet0/2
+ duplex auto
+!
+interface Ethernet0/3
+ duplex auto
+!
+interface Vlan500
+ ip address 10.10.10.4 255.255.255.0
+!
+!
+!
+no ip http server
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ logging synchronous
+line aux 0
+line vty 0 4
+!
+end
+
+Switch#
