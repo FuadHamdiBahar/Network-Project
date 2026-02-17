@@ -104,10 +104,10 @@ router-id 192.168.254.6
 mpls ldp autoconfig
 
 # kuncinya
-R6# configure terminal
-R6(config)# line vty 0 4
-R6(config-line)# password cisco
-R6(config-line)# login
-R6(config-line)# transport input telnet ssh
-R6(config-line)# exit
-R6(config)# enable password cisco
+configure terminal
+line vty 0 4
+password cisco
+login
+transport input telnet ssh
+exit
+enable password cisco
